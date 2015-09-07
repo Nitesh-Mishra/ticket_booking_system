@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :no_of_seats_booked %><br>
-    <%= f.number_field :no_of_seats_booked %>
+    <%= f.number_field :no_of_seats_booked, :step=>1, :min=>1 %>
   </div>
   <div class="field">
     <%= f.label :seat_type %><br>
-    <%= f.text_field :seat_type %>
+    <%= f.select(:seat_type, Booking::SEAT_TYPE_LIST, :include_blank => "Please Select a Seat Type" ) %>
   </div>
   <div class="field">
     <%= f.label :cost_of_ticket %><br>
@@ -25,9 +25,35 @@
   </div>
   <div class="field">
     <%= f.label :payment_method %><br>
-    <%= f.text_field :payment_method %>
+    <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type") %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+
+
+$(document).ready( function ()
+{
+  $("#booking_cost_of_ticket").attr("disabled", "disabled")
+  $('#booking_seat_type').change(function()
+  {
+    var option = $('#booking_seat_type').val();
+    if(option == "Lower Class")
+    {
+      $('#booking_cost_of_ticket').val(300);
+    }
+    else if(option == "Middle Class")
+    {
+      $('#booking_cost_of_ticket').val(500);
+    }
+    else if(option == "Higher Class")
+    {
+      $('#booking_cost_of_ticket').val(1000); 
+    }   
+  });
+});
+
+</script>
