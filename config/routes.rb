@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
+  
+  root 'bookings#index'
+
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'sessions/destroy'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :bookings
   resources :schedules
+
+  #resources :sessions, only: [:create, :destroy]
   #resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'bookings#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
