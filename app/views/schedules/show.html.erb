@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team id1:</strong>
+  <%= @schedule.team_id1 %>
+</p>
+
+<p>
+  <strong>Team id2:</strong>
+  <%= @schedule.team_id2 %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @schedule.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @schedule.time %>
+</p>
+
+<p>
+  <strong>No of seats:</strong>
+  <%= @schedule.no_of_seats %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

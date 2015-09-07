@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team_id1: 1
+  team_id2: 1
+  date: 2015-09-08 00:36:38
+  time: 2015-09-08 00:36:38
+  no_of_seats: MyString
+
+two:
+  team_id1: 1
+  team_id2: 1
+  date: 2015-09-08 00:36:38
+  time: 2015-09-08 00:36:38
+  no_of_seats: MyString

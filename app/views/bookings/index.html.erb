@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No of seats booked</th>
+      <th>Seat type</th>
+      <th>Cost of ticket</th>
+      <th>Payment method</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.no_of_seats_booked %></td>
+        <td><%= booking.seat_type %></td>
+        <td><%= booking.cost_of_ticket %></td>
+        <td><%= booking.payment_method %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>

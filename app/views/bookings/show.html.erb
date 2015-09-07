@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>No of seats booked:</strong>
+  <%= @booking.no_of_seats_booked %>
+</p>
+
+<p>
+  <strong>Seat type:</strong>
+  <%= @booking.seat_type %>
+</p>
+
+<p>
+  <strong>Cost of ticket:</strong>
+  <%= @booking.cost_of_ticket %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @booking.payment_method %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

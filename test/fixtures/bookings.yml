@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_of_seats_booked: 1
+  seat_type: MyString
+  cost_of_ticket: MyString
+  payment_method: MyString
+
+two:
+  no_of_seats_booked: 1
+  seat_type: MyString
+  cost_of_ticket: MyString
+  payment_method: MyString
