@@ -13,12 +13,15 @@
 
   <div class="field">
     <%= f.label :team_name1 %><br>
+    <% team_array = Team.all.map { |team| [team.name] } %>
+    <%= f.select :team_name1,  team_array , :include_blank => "Select Team 1"%>
     
-    <%= collection_select(:team_name1, 0, Team.all, :id, :name, :include_blank => "Select Team")  %>
   </div>
   <div class="field">
     <%= f.label :team_name2 %><br>
-    <%= collection_select(:team_name2, 0, Team.all, :id, :name, :include_blank => "Select Team")%>
+    <% team_array = Team.all.map { |team| [team.name] } %>
+    <%= f.select :team_name2,  team_array , :include_blank => "Select Team 2"%>
+    
   </div>
   <div class="field">
     <%= f.label :date %><br>

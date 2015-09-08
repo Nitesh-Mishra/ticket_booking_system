@@ -15,7 +15,6 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   def new
     @schedule = Schedule.new
-    @team = Team.all
   end
 
   # GET /schedules/1/edit
