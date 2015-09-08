@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Team id1</th>
-      <th>Team id2</th>
+      <th>Team name1</th>
+      <th> </th>
+      <th>Team name2</th>
       <th>Date</th>
       <th>Time</th>
       <th>No of seats</th>
@@ -17,8 +18,9 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= schedule.team_id1 %></td>
-        <td><%= schedule.team_id2 %></td>
+        <td><%= schedule.team_name1 %></td>
+        <td>Vs</td>
+        <td><%= schedule.team_name2 %></td>
         <td><%= schedule.date %></td>
         <td><%= schedule.time %></td>
         <td><%= schedule.no_of_seats %></td>

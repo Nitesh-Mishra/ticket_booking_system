@@ -12,12 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :team_id1 %><br>
-    <%= f.number_field :team_id1 %>
+    <%= f.label :team_name1 %><br>
+    
+    <%= collection_select(:team_name1, 0, Team.all, :id, :name, :include_blank => "Select Team")  %>
   </div>
   <div class="field">
-    <%= f.label :team_id2 %><br>
-    <%= f.number_field :team_id2 %>
+    <%= f.label :team_name2 %><br>
+    <%= collection_select(:team_name2, 0, Team.all, :id, :name, :include_blank => "Select Team")%>
   </div>
   <div class="field">
     <%= f.label :date %><br>

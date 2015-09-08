@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907203222) do
+ActiveRecord::Schema.define(version: 20150908182638) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -53,16 +53,17 @@ ActiveRecord::Schema.define(version: 20150907203222) do
     t.string   "payment_method"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "team_id1"
-    t.integer  "team_id2"
     t.datetime "date"
     t.datetime "time"
     t.string   "no_of_seats"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "team_name1"
+    t.string   "team_name2"
   end
 
   create_table "teams", force: :cascade do |t|

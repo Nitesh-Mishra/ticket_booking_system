@@ -27,6 +27,7 @@
     <%= f.label :payment_method %><br>
     <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type") %>
   </div>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %>
   <div class="actions">
     <%= f.submit %>
   </div>
