@@ -10,6 +10,15 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
+    @booking = Booking.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ReceiptPdf.new(@booking, view_context)
+        send_data pdf.render, filename: "booking.pdf",
+                              type: "application/pdf", disposition: "inline"
+      end
+    end
   end
 
   # GET /bookings/new
@@ -28,8 +37,9 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
+        #format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        #format.json { render :show, status: :created, location: @booking }
+
       else
         format.html { render :new }
         format.json { render json: @booking.errors, status: :unprocessable_entity }

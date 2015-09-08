@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :cost_of_ticket %><br>
-    <%= f.text_field :cost_of_ticket %>
+    <%= f.text_field :cost_of_ticket, :readonly => true%>
   </div>
   <div class="field">
     <%= f.label :payment_method %><br>
@@ -37,7 +37,7 @@
 
 $(document).ready( function ()
 {
-  $("#booking_cost_of_ticket").attr("disabled", "disabled")
+  
   $('#booking_seat_type').change(function()
   {
     var option = $('#booking_seat_type').val();
