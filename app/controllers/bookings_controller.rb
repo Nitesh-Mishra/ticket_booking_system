@@ -37,8 +37,10 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        #format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        #format.json { render :show, status: :created, location: @booking }
+        UserMailer.receipt_send.deliver
+        #UserMailer.receipt_send(@user).deliver
+        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.json { render :show, status: :created, location: @booking }
 
       else
         format.html { render :new }
