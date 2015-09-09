@@ -17,7 +17,7 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @schedule.time %>
+  <%= @schedule.time.strftime("%I:%M%p") %>
 </p>
 
 <p>
@@ -25,5 +25,5 @@
   <%= @schedule.no_of_seats %>
 </p>
 
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Book Ticket', :controller=> 'bookings', :action=> 'new' %> |
 <%= link_to 'Back', schedules_path %>

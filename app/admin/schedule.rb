@@ -7,12 +7,23 @@ ActiveAdmin.register Schedule do
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or
-  #
+  permit_params :team_name1, :team_name2, :date, :time, :no_of_seats
   # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs "New Entry" do
+      f.input :team_name1, :collection => Team.all.map{ |team| team.name}
+      f.input :team_name2, :collection => Team.all.map{ |team| team.name}
+      f.input :date, :as => :datepicker
+      f.input :time
+      f.input :no_of_seats
+    end
+    f.actions
+  end
 
 
 end

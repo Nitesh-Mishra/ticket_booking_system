@@ -25,8 +25,7 @@
         <td><%= schedule.time %></td>
         <td><%= schedule.no_of_seats %></td>
         <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Schedule', new_schedule_path %>
+<!-- <%= link_to 'New Schedule', new_schedule_path %> 
