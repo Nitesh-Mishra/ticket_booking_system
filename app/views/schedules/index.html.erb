@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Team name1</th>
-      <th> </th>
+      <th></th>
       <th>Team name2</th>
       <th>Date</th>
       <th>Time</th>
@@ -22,7 +22,7 @@
         <td>Vs</td>
         <td><%= schedule.team_name2 %></td>
         <td><%= schedule.date %></td>
-        <td><%= schedule.time %></td>
+        <td><%= schedule.time.strftime("%I:%M%p") %></td>
         <td><%= schedule.no_of_seats %></td>
         <td><%= link_to 'Show', schedule %></td>
         

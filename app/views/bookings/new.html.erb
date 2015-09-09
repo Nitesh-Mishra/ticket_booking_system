@@ -4,10 +4,10 @@
 
 		<%= render 'form' %>
 
-		<%= link_to 'Back', bookings_path %>
+		<%= link_to 'Back', :controller=> "schedules", :action=> "index" %>
 
   <% else %>
-    	<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    	<h3>You need to sign in to book the ticket.</h3>
   <% end %>
 </div>
 

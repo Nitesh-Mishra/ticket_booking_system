@@ -2,7 +2,7 @@
 
 <p>
   <strong>No of seats booked:</strong>
-  <%= @booking.no_of_seats_booked %>
+  <%= @booking.no_of_seats_booked %> 
 </p>
 
 <p>
@@ -20,4 +20,5 @@
   <%= @booking.payment_method %>
 </p>
 
-<%= link_to 'Print',booking_path(@booking, format: "pdf") %> 
+<%= link_to 'Print',booking_path(@booking, format: "pdf") %> |
+<%= link_to 'Book Another', :controller=> 'bookings', :action=> 'new' %> 
