@@ -27,24 +27,24 @@
   <br><br>
   <div class="field">
     <%= f.label :no_of_seats_booked %><br>
-    <%= f.number_field :no_of_seats_booked, :step=>1, :min=>1, :required => true %>
+    <%= f.number_field :no_of_seats_booked, :step=>1, :min=>1, :required => true, :class => 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :seat_type %><br>
-    <%= f.select(:seat_type, Booking::SEAT_TYPE_LIST, :include_blank => " Select Seat Type" , :required => true) %>
+    <%= f.select(:seat_type, Booking::SEAT_TYPE_LIST, :include_blank => " Select Seat Type" , :required => true, :class => 'form-control') %>
   </div>
   <div class="field">
     <%= f.label :cost_of_ticket %><br>
-    <%= f.text_field :cost_of_ticket, :readonly => true, :required => true%>
+    <%= f.text_field :cost_of_ticket, :readonly => true, :required => true, :class => 'form-control'%>
   </div>
   <div class="field">
     <%= f.label :payment_method %><br>
-    <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type",:required => true) %>
+    <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type",:required => true, :class => 'form-control') %>
   </div>
   <%= f.hidden_field :user_id, :value => session[:user_id] %>
   <%= f.hidden_field :schedule_id, :value => session[:schedule_id] %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-block form-control'%>
   </div>
 <% end %>
 
