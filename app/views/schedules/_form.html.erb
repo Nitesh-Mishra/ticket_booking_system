@@ -35,8 +35,20 @@
     <%= f.label :no_of_seats %><br>
     <%= f.text_field :no_of_seats %>
   </div>
-  
+  <%= f.hidden_field :booked_seats %>
+  <%= f.hidden_field :available_seats %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+  $(document).ready( function ()
+{
+  
+  $('#schedule_no_of_seats').focusout(function()
+  {
+    $('#schedule_available_seats').val($('#schedule_no_of_seats').val());   
+  });
+});
+</script>

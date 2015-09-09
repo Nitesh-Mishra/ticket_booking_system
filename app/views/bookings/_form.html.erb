@@ -10,22 +10,36 @@
       </ul>
     </div>
   <% end %>
-
+  <p>
+    * Note : Price for each ticket type are mentioned below.
+  </p>
+  <ol> 
+    <li>
+      Lower Class : 300
+    </li>
+    <li>
+      Middle Class :500
+    </li>
+    <li>
+      Higher Class :1000
+    </li>
+  </ol>
+  <br><br>
   <div class="field">
     <%= f.label :no_of_seats_booked %><br>
-    <%= f.number_field :no_of_seats_booked, :step=>1, :min=>1 %>
+    <%= f.number_field :no_of_seats_booked, :step=>1, :min=>1, :required => true %>
   </div>
   <div class="field">
     <%= f.label :seat_type %><br>
-    <%= f.select(:seat_type, Booking::SEAT_TYPE_LIST, :include_blank => "Please Select a Seat Type" ) %>
+    <%= f.select(:seat_type, Booking::SEAT_TYPE_LIST, :include_blank => " Select Seat Type" , :required => true) %>
   </div>
   <div class="field">
     <%= f.label :cost_of_ticket %><br>
-    <%= f.text_field :cost_of_ticket, :readonly => true%>
+    <%= f.text_field :cost_of_ticket, :readonly => true, :required => true%>
   </div>
   <div class="field">
     <%= f.label :payment_method %><br>
-    <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type") %>
+    <%= f.select(:payment_method,  Booking::PAYMENT_METHOD_LIST, :include_blank => "Please Select a Payment Type",:required => true) %>
   </div>
   <%= f.hidden_field :user_id, :value => session[:user_id] %>
   <%= f.hidden_field :schedule_id, :value => session[:schedule_id] %>
@@ -45,15 +59,15 @@ $(document).ready( function ()
     var option = $('#booking_seat_type').val();
     if(option == "Lower Class")
     {
-      $('#booking_cost_of_ticket').val(300);
+      $('#booking_cost_of_ticket').val(300*($('#booking_no_of_seats_booked').val()));
     }
     else if(option == "Middle Class")
     {
-      $('#booking_cost_of_ticket').val(500);
+      $('#booking_cost_of_ticket').val(500*($('#booking_no_of_seats_booked').val()));
     }
     else if(option == "Higher Class")
     {
-      $('#booking_cost_of_ticket').val(1000); 
+      $('#booking_cost_of_ticket').val(1000*($('#booking_no_of_seats_booked').val())); 
     }   
   });
 });

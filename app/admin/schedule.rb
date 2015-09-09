@@ -7,7 +7,7 @@ ActiveAdmin.register Schedule do
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or
-  permit_params :team_name1, :team_name2, :date, :time, :no_of_seats
+  permit_params :team_name1, :team_name2, :date, :time, :no_of_seats, :available_seats, :booked_seats
   # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
@@ -21,6 +21,8 @@ ActiveAdmin.register Schedule do
       f.input :date, :as => :datepicker
       f.input :time
       f.input :no_of_seats
+      f.input :available_seats
+      f.input :booked_seats, :as => :hidden
     end
     f.actions
   end

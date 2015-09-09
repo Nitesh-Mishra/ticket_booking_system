@@ -35,10 +35,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @user = User.find(session[:user_id])
+    @schedule = Schedule.find(session[:schedule_id])
     respond_to do |format|
       if @booking.save
         session[:schedule_id] = nil
-        #UserMailer.receipt_send.deliver
+        @schedule.available_seats = @schedule.available_seats.to_i - @booking.no_of_seats_booked.to_i
+        @schedule.booked_seats = @schedule.booked_seats.to_i + @booking.no_of_seats_booked.to_i
+        @schedule.save!
         UserMailer.receipt_send(@user).deliver
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }

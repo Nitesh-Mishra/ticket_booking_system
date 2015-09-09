@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909170137) do
+ActiveRecord::Schema.define(version: 20150909201352) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -61,10 +61,12 @@ ActiveRecord::Schema.define(version: 20150909170137) do
     t.date     "date"
     t.time     "time"
     t.string   "no_of_seats"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "team_name1"
     t.string   "team_name2"
+    t.string   "booked_seats",    default: "0"
+    t.string   "available_seats", default: "0"
   end
 
   create_table "teams", force: :cascade do |t|

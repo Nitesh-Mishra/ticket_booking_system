@@ -71,6 +71,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:team_name1, :team_name2, :date, :time, :no_of_seats)
+      params.require(:schedule).permit(:team_name1, :team_name2, :date, :time, :no_of_seats, :booked_seats, :available_seats)
     end
 end

@@ -11,6 +11,8 @@
       <th>Date</th>
       <th>Time</th>
       <th>No of seats</th>
+      <th>Available seats</th>
+      <th>Booked seats</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +26,8 @@
         <td><%= schedule.date %></td>
         <td><%= schedule.time.strftime("%I:%M%p") %></td>
         <td><%= schedule.no_of_seats %></td>
+        <td><%= schedule.available_seats %></td>
+        <td><%= schedule.booked_seats %></td>
         <td><%= link_to 'Show', schedule %></td>
         
       </tr>

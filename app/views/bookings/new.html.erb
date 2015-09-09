@@ -1,7 +1,7 @@
 <div>
   <% if current_user %>
-	    <h1>New Booking</h1>
-
+	    <h1 align="center">New Booking</h1>
+	    <hr><br>
 		<%= render 'form' %>
 
 		<%= link_to 'Back', :controller=> "schedules", :action=> "index" %>
