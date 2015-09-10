@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   def receipt_send(user)
     @greeting = "Hi"
 	@user = user
-    mail to: user.email, subject: "Booking Booking from Ticket Booking System"
+    mail to: user.email, subject: "Booking from Ticket Booking System"
   end
 
   
