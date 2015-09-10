@@ -16,7 +16,7 @@
 					<%= link_to 'Back', :controller=> "schedules", :action=> "index" %>
 
 			  <% else %>
-			    	<h3>You need to sign in to book the ticket.</h3>
+			    	<h3>You need to <%= link_to "Sign in", "/auth/facebook", id: "sign_in" %> to book the ticket.</h3>
 			  <% end %>
 			</div>
 		</div>	
